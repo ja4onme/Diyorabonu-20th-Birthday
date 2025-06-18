@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diyorabonu's 20th Birthday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      background: url('./19.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .play-notice {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      z-index: 999;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="play-notice" id="playNotice">
+<h5>to begin with</h5>
+    <img style="width: 30px;" src="./image.png" alt="">
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="./birthday.mp3" type="audio/mpeg">
+    Sizning brauzeringiz audio elementni qo‘llab-quvvatlamaydi.
+  </audio>
+
+  <script>
+    const notice = document.getElementById('playNotice');
+    const music = document.getElementById('bgMusic');
+
+    notice.addEventListener('click', () => {
+      music.play();
+      notice.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
